@@ -1,6 +1,7 @@
 builds:
   - binary: webpushy
     goarch: [amd64]
+    goos: [darwin, linux, windows]
     dir: cmd
     env:
       - CGO_ENABLED=0
