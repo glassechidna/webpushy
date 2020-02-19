@@ -21,7 +21,7 @@ type senderConfig struct {
 }
 
 func senderConfigPath() string {
-	path, err := homedir.Expand("~/.pushy/keys.json")
+	path, err := homedir.Expand("~/.webpushy/keys.json")
 	if err != nil {
 		panic(err)
 	}

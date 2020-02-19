@@ -21,7 +21,7 @@ type receiverConfig struct {
 }
 
 func receiverConfigPath(name string) string {
-	path, err := homedir.Expand(fmt.Sprintf("~/.pushy/%s.json", name))
+	path, err := homedir.Expand(fmt.Sprintf("~/.webpushy/%s.json", name))
 	if err != nil {
 		panic(err)
 	}
