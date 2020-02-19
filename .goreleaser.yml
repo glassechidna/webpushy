@@ -1,0 +1,46 @@
+builds:
+  - binary: webpushy
+    goarch: [amd64]
+    dir: cmd
+    env:
+      - CGO_ENABLED=0
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+nfpms:
+  - vendor: webpushy
+    homepage: https://github.com/glassechidna/webpushy
+    maintainer: webpushy team
+    description: webpushy is a CLI for sending and receiving small payloads using web browser push services
+    formats: [deb]
+brews:
+  - github:
+      owner: glassechidna
+      name: homebrew-taps
+    commit_author:
+      name: Aidan Steele
+      email: aidan.steele@glassechidna.com.au
+    homepage: https://github.com/glassechidna/webpushy
+    description: webpushy is a CLI for sending and receiving small payloads using web browser push services
+scoop:
+  bucket:
+    owner: glassechidna
+    name: scoop-bucket
+  commit_author:
+    name: Aidan Steele
+    email: aidan.steele@glassechidna.com.au
+  homepage: https://github.com/glassechidna/webpushy
+  description: webpushy is a CLI for sending and receiving small payloads using web browser push services
