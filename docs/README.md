@@ -23,6 +23,26 @@ webpush recv --name NAME [--limit COUNT] [--timeout SECS]
 	number of messages or SECS total time spent running. otherwise runs forever
 ```
 
+### Quick start
+
+After installation, run these:
+
+```
+# in terminal window 1
+webpushy send init --subscriber <your email> # this generates a key pair
+export PUBKEY=$(jq -r .Public ~/.webpushy/keys.json)
+webpushy recv init --name demo --public $PUBKEY
+export ENDPOINT=$(jq -r .Endpoint ~/.webpushy/demo.json)
+
+# now in a different terminal window 2
+webpushy recv --name demo # this will sit and wait.
+
+# back in terminal window 1
+webpushy send --endpoint $ENDPOINT --payload "hello world!"
+# do this a handful of times. if you don't provide --payload, each line 
+# written on stdin is sent as a message.
+```
+
 ## Installation
 
 * Mac: `brew install glassechidna/taps/webpushy`
