@@ -1,5 +1,7 @@
 # `webpushy`
 
+A 1 minute demo video is [viewable on Terminalizer.com][demo-video].
+
 ## CLI usage
 
 ```
@@ -27,4 +29,5 @@ webpush recv --name NAME [--limit COUNT] [--timeout SECS]
 * Windows: `scoop bucket add glassechidna https://github.com/glassechidna/scoop-bucket.git; scoop install webpushy`
 * Otherwise get the latest build from the [Releases][releases] tab.
 
+[demo-video]: https://terminalizer.com/view/2afec1ab3151
 [releases]: https://github.com/glassechidna/webpushy/releases
